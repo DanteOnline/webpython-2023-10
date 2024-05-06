@@ -15,6 +15,7 @@ services:
       timeout: 3s
       retries: 5
   backend:
+    image: danteonline/webpython-backend
     build:
       context: .
     expose:
@@ -31,12 +32,14 @@ services:
       db:
         condition: service_healthy
   nginx:
+    image: danteonline/webpython-nginx
     build: ./nginx
     ports:
       - 8000:80
     depends_on:
       - backend
   frontend:
+      image: danteonline/webpython-frontend
       build:
         context: ./frontend
       ports:
