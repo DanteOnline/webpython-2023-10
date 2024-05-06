@@ -1,4 +1,4 @@
-[MAIN]
+[MASTER]
 disable=
     E1101, #  Dynamic attributes
     C0301, #  Line too long
@@ -10,4 +10,5 @@ disable=
     C0116, # docstrings
     R0903, # too few public methods
     R0901, # too many ancestors ?
-ignore=migrations
+
+ignore-paths=.*/migrations

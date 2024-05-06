@@ -1,13 +1,13 @@
 import requests
 
-url = 'http://127.0.0.1:8000/api/animals/'
+URL = 'http://127.0.0.1:8000/api/animals/'
 
-response = requests.get(url)
+response = requests.get(URL, timeout=1.0)
 print(response.status_code)
 assert response.status_code, 401
 
 # базовая авторизация
-response = requests.get(url, auth=('admin', 'admin'))
+response = requests.get(URL, auth=('admin', 'admin'), timeout=1.0)
 print(response.status_code)
 assert response.status_code, 200
 
@@ -17,6 +17,6 @@ headers = {
     'Authorization': f'Token {TOKEN}'
 }
 
-response = requests.get(url, headers=headers)
+response = requests.get(URL, headers=headers, timeout=1.0)
 print(response.status_code)
 assert response.status_code, 200
