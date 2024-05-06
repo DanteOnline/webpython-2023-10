@@ -2,7 +2,7 @@ name: Build and push to DockerHub
 
 on:
   workflow_run:
-    workflows: ["Run tests", "Pylint"]
+    workflows: ["Run tests"]
     branches: ["master"]
     types:
       - completed
