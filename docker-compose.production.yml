@@ -39,4 +39,4 @@ services:
   frontend:
       image: danteonline/webpython-frontend
       ports:
-        - 3000:80
+        - 80:80
