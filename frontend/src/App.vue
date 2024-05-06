@@ -40,7 +40,7 @@ export default {
           const token = this.getToken()
           headers['Authorization'] = 'Token ' + token
         }
-        axios.get('http://127.0.0.1:8000/api/animals/', {headers})
+        axios.get('http://45.12.18.97:8000/api/animals/', {headers})
             .then(response => {
                 this.animals = response.data
             }).catch(error => console.log(error))
@@ -49,7 +49,7 @@ export default {
       // console.log(login)
       // console.log(password)
       // this.isAuth = true
-      axios.post('http://127.0.0.1:8000/api-token-auth/', {username: login, password: password})
+      axios.post('http://45.12.18.97:8000/api-token-auth/', {username: login, password: password})
       .then(response => {
           const token = response.data['token']
           this.saveToken(token)
